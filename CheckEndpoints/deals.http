@@ -1,0 +1,8 @@
+//use REST Client extension
+
+
+Get http://localhost:3000/user/events
+###
+Get http://localhost:3000/user/special
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0IjoiNWNiMWEyMjk4ODZhZTcwZWI0ODc2MTY1IiwiaWF0IjoxNTU1MTQ3ODY1fQ.ySwGKNo2x4G93Qjk-FxB2V4Y08R5DamNffgadIAYF_E

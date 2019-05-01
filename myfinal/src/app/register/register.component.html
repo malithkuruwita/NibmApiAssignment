@@ -1,0 +1,110 @@
+<div class="container-fluid" style="padding-top:80px;padding-bottom: 197px;">
+  <div class="row">
+    <div
+      class="col-md-6"
+      style="margin-left:auto;margin-right:auto;padding:30px 15px 30px 15px;background:#fff;-moz-box-shadow: 0 0 5px 5px rgb(6, 163, 124);
+      -webkit-box-shadow: 0 0 5px 5px rgb(6, 163, 124);
+      box-shadow: 0 0 5px 5px rgb(6, 163, 124);"
+    >
+      <div class="row">
+        <div class="col-xl-6 col-lg-6 customlogin bdr">
+          <section class="outer-wrapper">
+            <div class="inner-wrapper">
+              <div id="reg" class="register">
+                <p style="color:black;margin-bottom: 12px;">
+                  Sign Up to Quick4Ship
+                </p>
+                <form #userForm="ngForm" (ngSubmit)="registerUser(userForm)">
+                  <div class="form-group">
+                    <input
+                      [(ngModel)]="_auth.selectedUser.method"
+                      name="method"
+                      #method="ngModel"
+                      value="local"
+                      type="hidden"
+                      class="form-control"
+                    />
+                    <input
+                      [(ngModel)]="_auth.selectedUser.local.username"
+                      name="username"
+                      #username="ngModel"
+                      type="username"
+                      class="form-control"
+                      placeholder="Username"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      [(ngModel)]="_auth.selectedUser.local.email"
+                      name="email"
+                      #email="ngModel"
+                      type="email"
+                      class="form-control"
+                      aria-describedby="emailHelp"
+                      placeholder="Enter email"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      [(ngModel)]="_auth.selectedUser.local.password"
+                      name="password"
+                      #password="ngModel"
+                      type="password"
+                      class="form-control"
+                      placeholder="Password"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    class="btn btn-primary"
+                    style="margin-bottom:10px;"
+                  >
+                    Sign Up
+                  </button>
+                </form>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="col-xl-6 col-lg-6">
+          <section class="outer-wrapper">
+            <div class="inner-wrapper">
+              <div id="sigA" class="signA">
+                <p style="color:black;margin-bottom: 12px;text-align: center;">
+                  Continue With Social Media
+                </p>
+                <form>
+                  <a
+                    (click)="socialSignIn('facebook')"
+                    type="button"
+                    class="btn btn-lg btn-block fweight"
+                    style="color:#fff;background-color:#3b5999;padding: 0.3rem 1rem;"
+                  >
+                    <span style="float:left;"
+                      ><i
+                        class="fa fa-facebook-square fweight"
+                        aria-hidden="true"
+                      ></i></span
+                    >Facebook</a
+                  >
+                  <a
+                    (click)="socialSignIn('google')"
+                    type="button"
+                    class="btn btn-lg btn-block fweight"
+                    style="color:#fff;background-color:#db4a39;padding: 0.3rem 1rem;"
+                    ><span style="float:left;"
+                      ><i
+                        class="fa fa-google fweight"
+                        aria-hidden="true"
+                      ></i></span
+                    >Google +</a
+                  >
+                </form>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

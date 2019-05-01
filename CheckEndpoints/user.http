@@ -1,0 +1,70 @@
+Post http://localhost:3000/user/register
+Content-Type: application/json
+
+{
+    "method":"local",
+    "local":{
+        "username":"malith",
+        "email":"malithdulan7@gmail.com",
+        "password":"DUlan7788"
+    }  
+}
+
+###
+Post http://localhost:3000/user/login
+Content-Type: application/json
+
+{
+    "method":"local",
+    "local":{
+        "email":"mrslegends@gmail.com",
+        "password":"DUlan7788"
+    }
+}
+###
+Post http://localhost:3000/user/resetpassword
+Content-Type: application/json
+
+{
+    "email": "mrslegends@gmail.com"
+}
+###
+Post http://localhost:3000/user/reset
+Content-Type: application/json
+
+{
+    "password":"DUlan7788",
+    "confirmPassword":"DUlan7788",
+    "token":"5004673cac4218a9be7343e56462fa93f4555be7"
+}
+###
+Post http://localhost:3000/user/oauth/google
+Content-Type: application/json
+
+{
+	"access_token": "ya29.GlvqBq66ElGAJzxHRbFNhhQkaBlD3BWIp4rZMaioX56qk1lk_PdWZsW7MkvOfymyo074qpLNYJqbqqp8geaob14tNzQjdBT6FixpF4JSubpfMSXuNnFZz2zyof5i"
+}
+//get a google access token from https://developers.google.com/oauthplayground/ => Google OAuth2 API v2
+//need client side to get the token and send it to the server to validate
+
+###
+Post http://localhost:3000/user/oauth/facebook
+Content-Type: application/json
+
+{
+    "access_token": "EAALZC72aIZAuwBAFMaVwPyYSV9zsS2Ro3mCR9xnWqrifQbENG5ejdYGoV2mP8yBSZBZAZCio4q3pgESqtnoBtPZCsWJO9fz1rq4S4DWmzLZCaNITuxtuZBAWKvO7kqGahLi6grlhhvMIv6kUSRbrbQYu6SB6YfCQ2BZCbOe0JLNSNmFITcTbeGd1lztvoaFMyfP4teyfMZB8wvgAZDZD"
+}
+//get a facebook access token from https://developers.facebook.com/tools/access_token
+//https://developers.facebook.com/tools/explorer
+//need client side to get the token and send it to the server to validate
+
+###
+Post http://localhost:3000/user/oauth/github
+Content-Type: application/json
+
+{
+    "access_token": "8fc6c44b8d1b36b6173d77096393f67bd7975511"
+}
+//get a github access token from https://github.com/settings/tokens
+//need client side to get the token and send it to the server to validate
+

@@ -1,0 +1,192 @@
+<div class="container-fluid" style="padding-top:80px;padding-bottom: 197px;">
+  <div class="row">
+    <div
+      class="col-md-6"
+      style="margin-left:auto;margin-right:auto;padding:30px 15px 30px 15px;background:#fff;-moz-box-shadow: 0 0 5px 5px rgb(6, 163, 124);
+    -webkit-box-shadow: 0 0 5px 5px rgb(6, 163, 124);
+    box-shadow: 0 0 5px 5px rgb(6, 163, 124);"
+    >
+      <div class="row">
+        <div class="col-xl-6 col-lg-6 customlogin bdr">
+          <section class="outer-wrapper">
+            <div class="inner-wrapper">
+              <div id="log" class="login ">
+                <p style="color:black;margin-bottom: 12px;">
+                  Log in to Quick4Ship
+                </p>
+                <form #userForm="ngForm" (ngSubmit)="loginUser(userForm)">
+                  <div class="form-group">
+                    <input
+                      [(ngModel)]="_auth.selectedUser.method"
+                      name="method"
+                      #method="ngModel"
+                      value="local"
+                      type="hidden"
+                      class="form-control"
+                    />
+                    <input
+                      [(ngModel)]="_auth.selectedUser.local.email"
+                      name="email"
+                      #email="ngModel"
+                      type="email"
+                      class="form-control"
+                      aria-describedby="emailHelp"
+                      placeholder="Enter email"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      [(ngModel)]="_auth.selectedUser.local.password"
+                      name="password"
+                      #password="ngModel"
+                      type="password"
+                      class="form-control"
+                      placeholder="Password"
+                    />
+                  </div>
+                  <button type="submit" class="btn btn-primary">Sign In</button>
+                </form>
+                <a
+                  style="color:black;margin-top: 10px;cursor: pointer;"
+                  (click)="showForClass()"
+                  >Reset Password ?</a
+                >
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="col-xl-6 col-lg-6">
+          <section class="outer-wrapper">
+            <div class="inner-wrapper">
+              <div id="logA" class="loginA">
+                <p style="color:black;margin-bottom: 12px;text-align: center;">
+                  Continue With Social Media
+                </p>
+                <form>
+                  <a
+                    (click)="socialSignIn('facebook')"
+                    type="button"
+                    class="btn btn-lg btn-block fweight"
+                    style="color:#fff;background-color:#3b5999;padding: 0.3rem 1rem;"
+                  >
+                    <span style="float:left;"
+                      ><i
+                        class="fa fa-facebook-square fweight"
+                        aria-hidden="true"
+                      ></i></span
+                    >Facebook</a
+                  >
+                  <a
+                    (click)="socialSignIn('google')"
+                    type="button"
+                    class="btn btn-lg btn-block fweight"
+                    style="color:#fff;background-color:#db4a39;padding: 0.3rem 1rem;"
+                    ><span style="float:left;"
+                      ><i
+                        class="fa fa-google fweight"
+                        aria-hidden="true"
+                      ></i></span
+                    >Google +</a
+                  >
+                </form>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="backdrop" [ngClass]="getClass()"></div>
+<div class="modal" tabindex="-1" role="dialog" [ngClass]="getClass()">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="background-color:#069370;">
+      <div class="mo-header">
+        <h4
+          class="modal-title"
+          style="color:#fff;text-align: center;margin-top:10px;"
+        >
+          Login Authentication
+        </h4>
+      </div>
+
+      <div
+        class="m-body"
+        style="padding-top: 30px;
+        padding-bottom: 15px;"
+      >
+        <p style="text-align:center;color:#fff;font-size: 20px;">
+          {{ errorData.error }}
+        </p>
+      </div>
+
+      <div class="m-footer">
+        <button
+          type="button"
+          class="btn btn-default"
+          (click)="hideClass()"
+          style="color:#fff;float: right;"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal !-->
+
+<div class="backdrop" [ngClass]="getForClass()"></div>
+<div class="modal" tabindex="-1" role="dialog" [ngClass]="getForClass()">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="mo-header">
+        <h4 class="modal-title" style="text-align: center;margin-top:10px;">
+          Password Reset
+        </h4>
+      </div>
+
+      <div class="m-body" style="padding:20px 50px 20px 50px;">
+        <h5 style="text-align:center;" *ngIf="resetData">
+          {{ resetData.message }}
+        </h5>
+        <form>
+          <div class="input-group" [ngClass]="hideemailsec()">
+            <input
+              [(ngModel)]="ResetUserData.email"
+              name="email"
+              type="text"
+              class="form-control"
+              placeholder="Enter email"
+            />
+            <span class="input-group-btn">
+              <button
+                (click)="ResetUser()"
+                class="btn btn-success"
+                type="button"
+              >
+                Reset
+              </button>
+            </span>
+          </div>
+        </form>
+      </div>
+
+      <div class="m-footer">
+        <button
+          type="button"
+          class="btn btn-default"
+          (click)="hideForClass()"
+          style="float: right;"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal !-->

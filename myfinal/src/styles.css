@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+
+/*
+body{
+    padding-top: 40px;
+    margin: 0;
+    background-color: grey;
+}
+*/
+
+body {
+  padding: 0px;
+  height: 100%;
+  padding-top: 100px;
+  margin: 0;
+  background: #e7edee;
+  /*background: #128e73;
+    background: -webkit-linear-gradient(#149777,#10846f);
+    background: linear-gradient(#149777,#10846f);
+    -webkit-box-shadow: 0 3px #d5e1e6;
+    box-shadow: 0 3px #d5e1e6;*/
+}

@@ -1,0 +1,14 @@
+/*add boder right to login register model*/
+.bdr {
+  border-right: 2px solid #000000;
+}
+@media (max-width: 991px) {
+  .bdr {
+    border-right: none;
+  }
+}
+
+/*font weight of social media*/
+.fweight {
+  font-weight: 600;
+}

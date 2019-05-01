@@ -1,0 +1,52 @@
+.backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+.displayclass {
+  display: block;
+}
+.hideclass {
+  display: none;
+}
+
+/*add boder right to login register model*/
+.bdr {
+  border-right: 2px solid #000000;
+}
+@media (max-width: 991px) {
+  .bdr {
+    border-right: none;
+  }
+}
+
+.displayForgotPasswordModel {
+  display: block;
+}
+.hideForgotPasswordModel {
+  display: none;
+}
+
+/*hide emailsection*/
+.hideEmailSec {
+  display: none;
+}
+.showEmailSec {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  width: 100%;
+}
+
+/*font weight of social media*/
+.fweight {
+  font-weight: 600;
+}
