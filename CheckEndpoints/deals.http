@@ -1,8 +1,21 @@
 //use REST Client extension
 
 
-Get http://localhost:3000/user/events
+Get http://localhost:5000/user/events
 ###
-Get http://localhost:3000/user/special
+Get http://localhost:5000/user/special
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0IjoiNWNiMWEyMjk4ODZhZTcwZWI0ODc2MTY1IiwiaWF0IjoxNTU1MTQ3ODY1fQ.ySwGKNo2x4G93Qjk-FxB2V4Y08R5DamNffgadIAYF_E
+
+###
+Post http://localhost:5000/user/header/5ccb221ff4ee361d44748794
+Content-Type: application/json
+
+{
+    "subTotal": "2500",
+    "totalItems": "5",
+    "itemId":"242342",
+    "price":"500",
+    "quantity":"5",
+    "lineTotal":"456"
+}

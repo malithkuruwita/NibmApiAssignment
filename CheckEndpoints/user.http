@@ -1,4 +1,4 @@
-Post http://localhost:3000/user/register
+Post http://localhost:5000/user/register
 Content-Type: application/json
 
 {
@@ -11,25 +11,25 @@ Content-Type: application/json
 }
 
 ###
-Post http://localhost:3000/user/login
+Post http://localhost:5000/user/login
 Content-Type: application/json
 
 {
     "method":"local",
     "local":{
-        "email":"mrslegends@gmail.com",
+        "email":"malithdulan7@gmail.com",
         "password":"DUlan7788"
     }
 }
 ###
-Post http://localhost:3000/user/resetpassword
+Post http://localhost:5000/user/resetpassword
 Content-Type: application/json
 
 {
     "email": "mrslegends@gmail.com"
 }
 ###
-Post http://localhost:3000/user/reset
+Post http://localhost:5000/user/reset
 Content-Type: application/json
 
 {
@@ -38,7 +38,7 @@ Content-Type: application/json
     "token":"5004673cac4218a9be7343e56462fa93f4555be7"
 }
 ###
-Post http://localhost:3000/user/oauth/google
+Post http://localhost:5000/user/oauth/google
 Content-Type: application/json
 
 {
@@ -48,7 +48,7 @@ Content-Type: application/json
 //need client side to get the token and send it to the server to validate
 
 ###
-Post http://localhost:3000/user/oauth/facebook
+Post http://localhost:5000/user/oauth/facebook
 Content-Type: application/json
 
 {
@@ -59,7 +59,7 @@ Content-Type: application/json
 //need client side to get the token and send it to the server to validate
 
 ###
-Post http://localhost:3000/user/oauth/github
+Post http://localhost:5000/user/oauth/github
 Content-Type: application/json
 
 {

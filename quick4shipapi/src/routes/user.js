@@ -10,6 +10,11 @@ const router = express.Router();
 
 //import usermodel
 const User = require("../models/usermodel");
+//import header model
+const Header = require("../models/headermodel");
+//import detail model
+const Detail = require("../models/detailmodel");
+
 
 //Token verification method
 function verifyToken(req, res, next) {
@@ -158,6 +163,7 @@ router.post("/login", (req, res) => {
                   let payload = { subject: user._id };
                   let token = jwt.sign(payload, "secretkey");
                   let userData = {
+                    userId: user._id,
                     method: user.method,
                     username: user.local.username,
                     email: user.local.email
@@ -531,6 +537,46 @@ router.get("/special", verifyToken, (req, res) => {
   ];
 
   res.json(events);
+});
+
+
+
+router.post("/header/:id", async (req, res) => {
+  
+  
+  const header = new Header({
+    userId: req.params.id,
+    orderDate: Date.now(),
+    subTotal: req.body.subTotal,
+    totalItems: req.body.totalItems
+  });
+
+  const details = new Detail({
+    orderId: header._id,
+    itemId:req.body.itemId,
+    price:req.body.price,
+    quantity:req.body.quantity,
+    lineTotal:req.body.lineTotal
+  });
+
+  try{
+    await header.save((error, headerData) => {
+      if (error) {
+        console.log(error);
+      } else { 
+        details.save((error, DetailsData) => {
+          if (error) {
+            console.log(error);
+          }else{
+            res.status(200).send({ headerDetails: headerData, Details: DetailsData})
+          }
+        })
+        
+      }
+    });
+  }catch(err){
+    console.log(err)
+  }
 });
 
 module.exports = router;
